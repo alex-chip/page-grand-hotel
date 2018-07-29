@@ -1,0 +1,121 @@
+.Clients {
+    padding: $gutter;
+    color: #333;
+
+    &-container {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        @media screen and (min-width: $bp-medium) {
+            display: flex;
+        }
+    }
+
+    &-info {
+        text-align: center;
+        margin-bottom: $gutter;
+        &Data {
+            border-bottom: 1px solid #333;
+            padding: $gutter;
+
+            &:last-child {
+                border-bottom:  none;
+            }
+
+            @media screen and (min-width: $bp-medium) {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                align-content: center;
+
+                &:nth-child(1),
+                &:nth-child(2) {
+                    border-bottom: 1px solid #333;
+                }
+
+                &:nth-child(1),
+                &:nth-child(3) {
+                    border-right: 1px solid #333;
+                }
+
+                &:nth-child(3) { border-bottom: none; }
+            }
+
+            &-title,
+            &-number {
+                @media screen and (min-width: $bp-medium) {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            &-title {
+                font-weight: bold;
+            }
+
+            &-number {
+                font-weight: normal;
+                &:after {
+                    content: "+";
+                }
+            }
+        }
+
+        @media screen and(min-width: $bp-medium) {
+            width: 50%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            margin-right: $gutter;
+        }
+    }
+
+    &-card {
+
+        @media screen and(min-width: $bp-medium) {
+            width: 50%;
+        }
+
+        &Title {
+            text-transform: uppercase;
+
+            & span {
+                margin-left: .2em;
+                color: $primary-color;
+            }
+        }
+
+        &Subtitle {
+            margin-bottom: $gutter;
+        }
+
+        &Tweet {
+            display: grid;
+            grid-template-columns: 20% 40% 40%;
+            grid-template-areas: 'img name name'
+                                'img desc desc';
+            // grid-gap: $gutter;
+            margin-bottom: $gutter;
+
+            &Img {
+                grid-area: img;
+            }
+
+            &Name,
+            &Desc {
+                font-size: .8em;
+                padding-left: $gutter;
+            }
+
+            &Name{
+                grid-area: name;
+                display: flex;
+                align-items: flex-end;
+            }
+
+            &Desc {
+                grid-area: desc;
+            }
+        }
+    }
+}

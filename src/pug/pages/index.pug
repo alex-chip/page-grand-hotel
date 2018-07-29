@@ -1,0 +1,18 @@
+extends ../includes/layout
+block metatags
+    -var title = 'Grand Hotel'
+    -var description = 'Bienvenid@, en este sitio encontrarás información todo sobre nuestro hotel de 5 estrellas'
+    title= title
+    meta(name="description" content=description)
+    meta(name="application-name" content=title)
+block content
+    include ../includes/components/banner
+
+    include ../includes/components/features
+
+    include ../includes/components/our-hotel
+
+    include ../includes/components/gallery
+
+    include ../includes/components/client_says
+

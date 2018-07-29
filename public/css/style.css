@@ -1,0 +1,623 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "personal-page";
+  src: url("../fonts/personal-page.eot");
+  src: url("../fonts/personal-page.eot?#iefix") format("embedded-opentype"), url("../fonts/personal-page.woff") format("woff"), url("../fonts/personal-page.ttf") format("truetype"), url("../fonts/personal-page.svg#personal-page") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[data-icon]:before {
+  font-family: "personal-page" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "personal-page" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-facebook:before {
+  content: "\61"; }
+
+.icon-github:before {
+  content: "\62"; }
+
+.icon-menu:before {
+  content: "\63"; }
+
+.icon-twitter:before {
+  content: "\64"; }
+
+.icon-phone:before {
+  content: "\65"; }
+
+.icon-terminal:before {
+  content: "\66"; }
+
+.icon-code:before {
+  content: "\67"; }
+
+.icon-fork:before {
+  content: "\68"; }
+
+.icon-mail:before {
+  content: "\69"; }
+
+.icon-map:before {
+  content: "\6a"; }
+
+.button {
+  background: #eee;
+  color: #333;
+  padding: .5em 1em;
+  border-radius: 3px; }
+
+.u-center {
+  text-align: center; }
+
+.u-flexCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.c1xr1 {
+  grid-column: span 1;
+  grid-row: span 1; }
+
+.c1xr2 {
+  grid-column: span 1;
+  grid-row: span 2; }
+
+.c2xr1 {
+  grid-column: span 2;
+  grid-row: span 1; }
+
+.c2xr2 {
+  grid-column: span 2;
+  grid-row: span 2; }
+
+.c3xr1 {
+  grid-column: span 3;
+  grid-row: span 1; }
+
+/* @fileoverview
+    Componente para aplicar un reseteo de estilos básicos al documento, aplica las siguientes reglas:
+        box-sizing: border-box; al documento HTML y todos sus elementos
+        padding y margin de todos los elementos a cero
+        Evita barras de desplazamiento horizontales al body del documento, múy útil para el Responsive Resign
+        Asigna la fuente tipográfica y el tamaño base de fuente para el documento HTML
+        Dependencias: Ninguna
+
+        @param {String} $font, nombre de la fuente base del proyecyo
+        @param {String} $font-size, tamaño de fuente del elemento raíz (html)
+
+        @returns {void} no retorna nada
+
+        @author Alex Chip
+        @version 1.0.0
+ */
+html {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px; }
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0; }
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden; }
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: all .3s ease-out; }
+  a:hover {
+    color: #e0b152;
+    opacity: .75; }
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto; }
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0; }
+
+.Header-MenuContainer {
+  background: #333;
+  position: sticky;
+  top: 0;
+  z-index: 1000; }
+
+.Header {
+  background: #333;
+  display: flex;
+  align-items: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 60px; }
+  .Header-logo {
+    font-size: 1.1em; }
+
+@media screen and (max-width: 1024px) {
+  .Menu-nav {
+    position: absolute;
+    top: 40px;
+    width: 90vw;
+    right: -100vw;
+    padding: 1em;
+    background: #333;
+    transition: all .4s;
+    z-index: 200; }
+    .Menu-nav.is-active {
+      right: 0; } }
+
+.Menu-listItem {
+  line-height: 3; }
+  @media screen and (min-width: 1024px) {
+    .Menu-listItem {
+      display: flex; } }
+
+.Menu-item {
+  padding: 0 1em;
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all .4s; }
+  .Menu-item:last-child {
+    border-right: none; }
+  .Menu-item:hover {
+    background: rgba(224, 177, 82, 0.2); }
+  @media screen and (max-width: 1024px) {
+    .Menu-item {
+      border-right: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      padding-left: 1em; }
+      .Menu-item:last-child {
+        border-bottom: none; } }
+
+.Menu-link {
+  display: block; }
+  .Menu-link:hover {
+    color: #fff; }
+
+.Menu-toggle {
+  color: #fff;
+  display: flex;
+  cursor: pointer;
+  font-style: italic;
+  font-weight: bold; }
+  .Menu-toggle:before {
+    font-size: 1.2em;
+    order: 1;
+    margin-left: .5em; }
+  @media screen and (min-width: 1024px) {
+    .Menu-toggle {
+      display: none; } }
+
+.Header-container {
+  width: 50%; }
+  @media screen and (max-width: 1024px) {
+    .Header-container {
+      padding-left: 1em; } }
+
+.Menu-container {
+  width: 50%;
+  position: relative;
+  display: flex;
+  justify-content: flex-end; }
+  @media screen and (max-width: 1024px) {
+    .Menu-container {
+      padding-right: 1em; } }
+
+@media screen and (min-width: 640px) {
+  .Banner {
+    font-size: 2vw; } }
+
+.Banner-container {
+  display: flex;
+  background: url("../img/banner.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px);
+  position: relative; }
+  .Banner-container:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #e6e61a, #1aa2e6, #1aa2e6, #1ae65e);
+    opacity: .15; }
+  @media screen and (min-width: 1024px) {
+    .Banner-container {
+      justify-content: flex-start; } }
+
+.Banner-copy {
+  text-align: center;
+  z-index: 100;
+  color: #fff;
+  padding: 0 1em; }
+  @media screen and (min-width: 1024px) {
+    .Banner-copy {
+      text-align: left;
+      max-width: 900px;
+      width: 900px;
+      margin-right: auto;
+      margin-left: auto;
+      padding: 0; } }
+
+.Banner-title span {
+  color: #e0b152;
+  margin-left: .1em; }
+
+.Features {
+  padding: 0 1em;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  color: #333; }
+  @media screen and (min-width: 1024px) {
+    .Features {
+      padding: 0; } }
+  .Features-item {
+    padding: 1em 0;
+    width: 100%;
+    border-bottom: 1px solid #bbb; }
+    .Features-item:last-child {
+      border-bottom: none; }
+    @media screen and (min-width: 768px) {
+      .Features-item {
+        display: flex; }
+        .Features-item:nth-child(even) .Features-info {
+          order: 1;
+          padding-right: 0;
+          padding-left: 1em; }
+        .Features-item:nth-child(even) .Features-img a {
+          margin: 0 auto 0 0; } }
+  .Features-info {
+    display: flex;
+    flex-wrap: wrap; }
+    @media screen and (min-width: 1024px) {
+      .Features-info {
+        width: 40%;
+        padding-right: 1em; } }
+  .Features-img img {
+    margin-bottom: 1em; }
+  @media screen and (min-width: 1024px) {
+    .Features-img {
+      width: 60%; } }
+  .Features-number, .Features-title {
+    width: 50%;
+    text-align: center; }
+    @media screen and (min-width: 1024px) {
+      .Features-number, .Features-title {
+        width: 100%;
+        text-align: left; } }
+  .Features-number {
+    border-right: 1px solid #222; }
+    @media screen and (min-width: 1024px) {
+      .Features-number {
+        border-right: none; }
+        .Features-number:after {
+          content: "|";
+          display: block; } }
+  .Features-title {
+    color: #e0b152; }
+    @media screen and (min-width: 1024px) {
+      .Features-title {
+        margin: 0; } }
+  .Features-description {
+    width: 100%;
+    padding: 1em 0; }
+    @media screen and (min-width: 1024px) {
+      .Features-description {
+        margin: 0;
+        padding: 0; } }
+  .Features-price {
+    width: 40%;
+    margin: 0 0 1em;
+    font-style: italic;
+    line-height: 2; }
+    .Features-price:before {
+      content: "$";
+      margin-right: .2em; }
+    .Features-price:after {
+      content: '.00'; }
+    @media screen and (min-width: 1024px) {
+      .Features-price {
+        margin-bottom: 0;
+        display: flex;
+        align-items: flex-end; } }
+  .Features-buttonBuy {
+    width: 20%;
+    background: #111;
+    color: #fff;
+    text-align: center;
+    font-size: .8em;
+    margin: auto auto 1em;
+    display: table; }
+    @media screen and (min-width: 768px) {
+      .Features-buttonBuy {
+        margin-bottom: 0;
+        font-size: 1em; } }
+  .Features-buttonView {
+    background: #ad7e1f;
+    color: #fff;
+    display: table;
+    margin: 0 auto;
+    padding: .5em 3em; }
+    .Features-buttonView:hover {
+      color: #333; }
+    @media screen and (min-width: 768px) {
+      .Features-buttonView {
+        margin: 0 0 0 auto; } }
+
+.OurHotel {
+  background: url("../img/05.jpg") center/cover no-repeat;
+  position: relative;
+  padding: 1em 0; }
+  .OurHotel:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(51, 51, 51, 0.6); }
+  .OurHotel-container {
+    position: relative;
+    z-index: 100;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto; }
+    @media screen and (min-width: 1024px) {
+      .OurHotel-container {
+        display: flex;
+        align-items: center; } }
+  @media screen and (min-width: 1024px) {
+    .OurHotel-info, .OurHotel-img {
+      width: 45%; } }
+  .OurHotel-info {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap; }
+    @media screen and (min-width: 1024px) {
+      .OurHotel-info {
+        padding-right: 1em;
+        text-align: left; } }
+  .OurHotel-img img {
+    margin-top: 1em;
+    margin-bottom: 1em; }
+    @media screen and (max-width: 1024px) {
+      .OurHotel-img img {
+        width: 100%; } }
+  .OurHotel-title {
+    color: #e0b152;
+    width: 100%; }
+  .OurHotel-description {
+    color: #fff;
+    margin-bottom: 1em;
+    width: 100%; }
+    @media screen and (min-width: 1024px) {
+      .OurHotel-description {
+        font-size: .9em; } }
+  .OurHotel-buttonContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto; }
+    @media screen and (min-width: 1024px) {
+      .OurHotel-buttonContainer {
+        width: 100%;
+        justify-content: flex-start; } }
+  .OurHotel-buttonMas, .OurHotel-buttonMenos {
+    border-radius: 50%;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-content: center;
+    align-items: center;
+    color: #fff;
+    background: #e0b152; }
+    .OurHotel-buttonMas span, .OurHotel-buttonMenos span {
+      text-align: center;
+      width: 100%; }
+  @media screen and (min-width: 1024px) {
+    .OurHotel-buttonMas {
+      margin-right: 1em; } }
+  .OurHotel-card {
+    color: #fff;
+    padding: 2em 1em;
+    text-align: center;
+    background: rgba(51, 51, 51, 0.7); }
+    .OurHotel-cardDescription {
+      border: 1px solid rgba(224, 177, 82, 0.2); }
+      @media screen and (min-width: 1024px) {
+        .OurHotel-cardDescription {
+          padding: 3.5em .2em; } }
+    @media screen and (min-width: 1024px) {
+      .OurHotel-card {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        font-size: .9em;
+        padding: 0 1em;
+        margin: 1em 0;
+        text-align: left;
+        align-self: stretch; } }
+
+.Gallery {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .Gallery-containerInfo {
+    text-align: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto; }
+    @media screen and (min-width: 1024px) {
+      .Gallery-containerInfo {
+        width: 50%; } }
+  .Gallery-title {
+    text-transform: uppercase; }
+    .Gallery-title span {
+      color: #e0b152;
+      margin-left: .2em; }
+  .Gallery-containerImgs {
+    display: grid;
+    grid-template-columns: 100%; }
+    @media screen and (min-width: 380px) {
+      .Gallery-containerImgs {
+        grid-template-columns: repeat(2, 1fr); } }
+    @media screen and (min-width: 1024px) {
+      .Gallery-containerImgs {
+        grid-template-columns: repeat(4, 1fr); } }
+    .Gallery-containerImgs img {
+      width: 100%;
+      height: 200px; }
+  .Gallery-footer {
+    background: url(../img/04.jpg);
+    position: relative;
+    color: #fff; }
+    .Gallery-footer:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(51, 51, 51, 0.8); }
+    .Gallery-footerContainer {
+      position: relative;
+      z-index: 100;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.6);
+      height: 150px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap; }
+      @media screen and (min-width: 1024px) {
+        .Gallery-footerContainer {
+          align-items: space-between; } }
+    .Gallery-footerTitle {
+      width: 100%;
+      text-transform: uppercase; }
+      @media screen and (min-width: 1024px) {
+        .Gallery-footerTitle {
+          width: auto; } }
+    .Gallery-footerButton {
+      background: #e0b152;
+      color: #fff;
+      display: table;
+      margin-left: auto;
+      margin-right: auto; }
+      .Gallery-footerButton:hover {
+        color: #FFF; }
+      @media screen and (min-width: 1024px) {
+        .Gallery-footerButton {
+          margin: 0 0 0 auto; } }
+
+.Clients {
+  padding: 1em;
+  color: #333; }
+  .Clients-container {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto; }
+    @media screen and (min-width: 768px) {
+      .Clients-container {
+        display: flex; } }
+  .Clients-info {
+    text-align: center;
+    margin-bottom: 1em; }
+    .Clients-infoData {
+      border-bottom: 1px solid #333;
+      padding: 1em; }
+      .Clients-infoData:last-child {
+        border-bottom: none; }
+      @media screen and (min-width: 768px) {
+        .Clients-infoData {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          align-content: center; }
+          .Clients-infoData:nth-child(1), .Clients-infoData:nth-child(2) {
+            border-bottom: 1px solid #333; }
+          .Clients-infoData:nth-child(1), .Clients-infoData:nth-child(3) {
+            border-right: 1px solid #333; }
+          .Clients-infoData:nth-child(3) {
+            border-bottom: none; } }
+      @media screen and (min-width: 768px) {
+        .Clients-infoData-title, .Clients-infoData-number {
+          width: 100%;
+          text-align: center; } }
+      .Clients-infoData-title {
+        font-weight: bold; }
+      .Clients-infoData-number {
+        font-weight: normal; }
+        .Clients-infoData-number:after {
+          content: "+"; }
+    @media screen and (min-width: 768px) {
+      .Clients-info {
+        width: 50%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        margin-right: 1em; } }
+  @media screen and (min-width: 768px) {
+    .Clients-card {
+      width: 50%; } }
+  .Clients-cardTitle {
+    text-transform: uppercase; }
+    .Clients-cardTitle span {
+      margin-left: .2em;
+      color: #e0b152; }
+  .Clients-cardSubtitle {
+    margin-bottom: 1em; }
+  .Clients-cardTweet {
+    display: grid;
+    grid-template-columns: 20% 40% 40%;
+    grid-template-areas: 'img name name' 'img desc desc';
+    margin-bottom: 1em; }
+    .Clients-cardTweetImg {
+      grid-area: img; }
+    .Clients-cardTweetName, .Clients-cardTweetDesc {
+      font-size: .8em;
+      padding-left: 1em; }
+    .Clients-cardTweetName {
+      grid-area: name;
+      display: flex;
+      align-items: flex-end; }
+    .Clients-cardTweetDesc {
+      grid-area: desc; }

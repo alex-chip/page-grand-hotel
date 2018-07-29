@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "personal-page";
+  src:url("../fonts/personal-page.eot");
+  src:url("../fonts/personal-page.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/personal-page.woff") format("woff"),
+    url("../fonts/personal-page.ttf") format("truetype"),
+    url("../fonts/personal-page.svg#personal-page") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "personal-page" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "personal-page" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+  content: "\61";
+}
+.icon-github:before {
+  content: "\62";
+}
+.icon-menu:before {
+  content: "\63";
+}
+.icon-twitter:before {
+  content: "\64";
+}
+.icon-phone:before {
+  content: "\65";
+}
+.icon-terminal:before {
+  content: "\66";
+}
+.icon-code:before {
+  content: "\67";
+}
+.icon-fork:before {
+  content: "\68";
+}
+.icon-mail:before {
+  content: "\69";
+}
+.icon-map:before {
+  content: "\6a";
+}
