@@ -15,7 +15,7 @@
         text-align: center;
         margin-bottom: $gutter;
         &Data {
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #555;
             padding: $gutter;
 
             &:last-child {
@@ -30,12 +30,12 @@
 
                 &:nth-child(1),
                 &:nth-child(2) {
-                    border-bottom: 1px solid #333;
+                    border-bottom: 1px solid #555;
                 }
 
                 &:nth-child(1),
                 &:nth-child(3) {
-                    border-right: 1px solid #333;
+                    border-right: 1px solid #555;
                 }
 
                 &:nth-child(3) { border-bottom: none; }

@@ -562,7 +562,7 @@ ul {
     text-align: center;
     margin-bottom: 1em; }
     .Clients-infoData {
-      border-bottom: 1px solid #333;
+      border-bottom: 1px solid #555;
       padding: 1em; }
       .Clients-infoData:last-child {
         border-bottom: none; }
@@ -573,9 +573,9 @@ ul {
           align-items: center;
           align-content: center; }
           .Clients-infoData:nth-child(1), .Clients-infoData:nth-child(2) {
-            border-bottom: 1px solid #333; }
+            border-bottom: 1px solid #555; }
           .Clients-infoData:nth-child(1), .Clients-infoData:nth-child(3) {
-            border-right: 1px solid #333; }
+            border-right: 1px solid #555; }
           .Clients-infoData:nth-child(3) {
             border-bottom: none; } }
       @media screen and (min-width: 768px) {
@@ -621,3 +621,141 @@ ul {
       align-items: flex-end; }
     .Clients-cardTweetDesc {
       grid-area: desc; }
+
+.Soul {
+  color: #fff;
+  text-transform: uppercase;
+  background: url(../img/02.jpg) center/cover no-repeat;
+  height: 120px;
+  position: relative;
+  display: flex;
+  align-items: center; }
+  .Soul:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.8); }
+  .Soul-container {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; }
+  .Soul-description {
+    height: 100%;
+    position: relative;
+    z-index: 100;
+    font-weight: bold;
+    font-size: .9em; }
+    .Soul-description span {
+      color: #e0b152;
+      margin-left: .2em; }
+
+.Footer {
+  background: #333;
+  padding: 1em;
+  color: #fff;
+  font-size: .8em; }
+  .Footer-container {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto; }
+    @media screen and (min-width: 768px) {
+      .Footer-container {
+        display: flex;
+        flex-wrap: wrap; } }
+  .Footer-logo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 1em; }
+    .Footer-logoTitle {
+      margin-bottom: .5em;
+      width: 100%;
+      text-align: center; }
+    @media screen and (min-width: 768px) {
+      .Footer-logo {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center; } }
+    @media screen and (min-width: 1024px) {
+      .Footer-logo {
+        width: 25%; } }
+  .Footer-news {
+    margin-bottom: 1em; }
+    .Footer-newsTitle {
+      text-transform: uppercase;
+      padding-bottom: .8em; }
+    .Footer-newsDescription {
+      border-bottom: 1px solid #e0b152;
+      padding-bottom: .6em;
+      padding-top: .6em; }
+    @media screen and (min-width: 768px) {
+      .Footer-news {
+        widht: 50%; } }
+    @media screen and (min-width: 1024px) {
+      .Footer-news {
+        width: 25%;
+        padding-right: 1em; } }
+  .Footer-flicker {
+    display: grid;
+    grid-template-columns: repeat(3, 32%);
+    grid-template-rows: 30px 70px 70px;
+    grid-column-gap: 2%;
+    grid-row-gap: 2%;
+    margin-bottom: 1.5em; }
+    .Footer-flickerTitle {
+      grid-column: span 3;
+      margin: 1em 0 .2em;
+      text-transform: uppercase; }
+      @media screen and (min-width: 768px) {
+        .Footer-flickerTitle {
+          margin: 0;
+          grid-template-rows: 20px 80px 80px; } }
+    .Footer-flickerImg {
+      object-fit: cover;
+      width: 100%;
+      height: 100%; }
+    @media screen and (min-width: 768px) {
+      .Footer-flicker {
+        width: 50%;
+        padding: 0 .1em 0 0; } }
+    @media screen and (min-width: 1024px) {
+      .Footer-flicker {
+        width: 25%;
+        padding-right: 1em; } }
+  .Footer-contacts {
+    margin-bottom: 1em; }
+    .Footer-contactsAddress, .Footer-contactsPhone, .Footer-contactsEmail {
+      color: #e0b152;
+      width: 100%;
+      margin-bottom: 1em; }
+      .Footer-contactsAddress span, .Footer-contactsPhone span, .Footer-contactsEmail span {
+        color: #fff;
+        display: block;
+        width: 100%; }
+    .Footer-contactsTitle {
+      text-transform: uppercase; }
+      @media screen and (min-width: 768px) {
+        .Footer-contactsTitle {
+          margin-bottom: 1em; } }
+    @media screen and (min-width: 768px) {
+      .Footer-contacts {
+        width: 50%; } }
+    @media screen and (min-width: 1024px) {
+      .Footer-contacts {
+        width: 25%; } }
+  .Footer-copyRight {
+    text-align: center; }
+    @media screen and (min-width: 768px) {
+      .Footer-copyRight {
+        width: 100%; } }
+  .Footer-socialList {
+    display: flex; }
+  .Footer-socialItem {
+    margin-right: .4em; }
+  .Footer-socialLink {
+    font-size: 1.5em; }
